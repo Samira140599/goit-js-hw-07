@@ -1,6 +1,6 @@
 'use strict'
 
-const ulRef = document.querySelector('#items');
+const ulRef = document.getElementById('ingredients');
 
 
 const ingredients = [
