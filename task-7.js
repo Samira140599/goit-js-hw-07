@@ -1,7 +1,9 @@
 'use strict'
-const inputRef = document.getElementById('font-size-control');
-const spanRef = document.getElementById('text');
+const inputRangeRef = document.querySelector("#font-size-control");
+const inputTextRef = document.querySelector("#text");
 
-inputRef.addEventListener('input', () => {
-spanRef.style.fontSize = '24px';
-});
+const handleInput = () => {
+  inputTextRef.style.fontSize = `${inputRangeRef.value}px`;
+};
+
+inputRangeRef.addEventListener("input", handleInput);

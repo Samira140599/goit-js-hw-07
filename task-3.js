@@ -17,22 +17,28 @@ const images = [
     },
   ];
 
- let myListRef = document.querySelector('#gallery');
+ const gallery = document.getElementById('gallery');
 
-        let ref1=document.createElement('li');
-      ref1.innerHTML = '<img src="https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="White and Black Long Fur Cat" width = "500" height ="400"></img>';
-        let ref2=document.createElement('li');
-        ref2.innerHTML = '<img src="https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Orange and White Koi Fish Near Yellow Koi Fish" width = "500" height ="400" ></img>';
-        let ref3=document.createElement('li');
-        ref3.innerHTML ='<img src="https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Group of Horses Running" width = "500" height ="400"></img>';
-
+ const createGallery=function(arr,id){
+ 
+     for(let i=0;i<arr.length;i+=1){
+         let str='<li><img src=""></li>';
+         id.insertAdjacentHTML('afterbegin', str);
+         const li=id.querySelector('li');
+         const img=id.querySelector('img');
+         li.classList.add('item');
+         img.classList.add('images');
+         img.setAttribute('src',arr[i].url);
+         img.setAttribute('alt',arr[i].alt);        
+     }
+ }
+ createGallery(images,gallery);
+ 
      
 
-    let gallery = myListRef.append(ref1,ref2,ref3);
+    
 
-    ref1.classList.add('item');
-    ref2.classList.add('item');
-    ref3.classList.add('item');
+   
 
    
     

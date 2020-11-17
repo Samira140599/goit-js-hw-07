@@ -1,12 +1,12 @@
 'use strict'
 const inputRef = document.getElementById('validation-input');
-const inputValue = inputRef.getAttribute('data-length');
 
-inputRef.addEventListener('blur', () => {
-if(inputValue === 6){
-inputRef.classList.add('valid');
-} 
-else {
-inputRef.classList.add('invalid');
-}
-});
+    inputRef.addEventListener('blur',()=>{
+        if(Number(inputRef.value.length)!=Number(inputRef.dataset.length)){
+         inputRef.classList.remove('valid');
+            inputRef.classList.add('invalid');
+        }else{        
+            inputRef.classList.remove('invalid');
+           inputRef.classList.add('valid');
+        }
+    });

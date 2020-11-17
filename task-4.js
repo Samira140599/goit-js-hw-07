@@ -1,8 +1,8 @@
 'use strict'
-let decButton=document.querySelector('button[data-action="decrement"]');
-let incButton=document.querySelector('button[data-action="increment"]');
+const decButton=document.querySelector('button[data-action="decrement"]');
+const incButton=document.querySelector('button[data-action="increment"]');
 
-let counter = document.getElementById('value');
+const counter = document.getElementById('value');
 
 decButton.addEventListener('click',()=>{
     counter.innerHTML=Number(counter.innerHTML)-1;
